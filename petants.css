@@ -1,0 +1,53 @@
+.topnav {
+		padding-top: 1%;
+		padding-left: 40px;
+		overflow: hidden;
+	}
+
+	.topnav a {
+		border-radius: 20px;
+		float: left;
+		color: #6b705c;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 18px;
+		width: 13%;
+	}
+
+	.topnav a:hover {
+		border-radius: 30px;
+		background-color: #6b705c;
+		color: white;
+		width: 13%;
+		transition: 1s;
+	}
+	
+	body {
+		background-color: #b7b7a4;
+	}
+	
+	h2 {
+		font-size: 25px;
+		padding-left: 50px;
+		padding-right: 50px;
+		padding-top: 1%;
+		color: #4b4e40;
+	}
+	
+	h3 {
+		color: #2b2d25;
+		padding-left: 65px;
+		padding-right: 65px;
+	}
+	
+	img{
+		border-radius: 30px;
+	}
+	
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}

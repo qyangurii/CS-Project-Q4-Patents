@@ -1,0 +1,109 @@
+<!doctype html>
+	<html>
+		<link type = "text/css" rel = "stylesheet" id = "dark-mode-custom-link">
+		<link type = "text/css" rel = "stylesheet" id = "dark-mode-general-link">
+		<style lang = "en" type = "text/css" id = "dark-mode-custom-style"></style>
+		<style lang = "en" type = "text/css" id = "dark-mode-native-style"></style>
+		<style lang = "en" type = "text/css" id = "dark-mode-native-sheet"></style>
+		<head>
+		<title> feedback form ! </title>
+		</head>
+		
+		<style>
+			body {
+				background-color: #ddbea9;
+			}
+		</style>
+		
+		<body>
+			<form id = "admission" onsubmit = "return print();">
+				<label for = "name"> Name? </label>
+				<input type = "text" name = "name" id = "name">
+				<br><br>
+				<label for = "day"> How many times have you visited so far? </label>
+				<input type = "number" name = "day" id = "day">
+				<br><br>
+				<label for = "re"> Any Advice? </label>
+				<br>
+				<textarea type = "text" id = "reason" name = "reason"></textarea>
+				<br><br>
+				<p> Was visiting this website an enjoyable experience? </p>
+				<label for = "oui"> Yes </label>
+				<input type = "checkbox" id = "oui" name = "used" value = "Yes">
+				<br><br>
+				<label for = "non"> No </label>
+				<input type = "checkbox" id = "non" name = "used" value = "No">
+				<br><br><br>
+				
+				<fieldset form = "">
+				<legend>!! Pages Viewed !!</legend>
+				<br>
+				<label for = "intro">Introduction</label>
+				<input type = "checkbox" value = "Introduction" name = "sub">
+				<br><br>
+				<label for = "patents"> Patents </label>
+				<input type = "checkbox" value = "Patents" name = "sub">
+				<br><br>
+				<label for = "creator"> Creator's Profile </label>
+				<input type = "checkbox" value = "Creator's Profile" name = "sub">
+				<br><br>
+				<input type = "submit">
+				<br>
+				</fieldset>
+			</form>
+			
+			<p id = "ngalan"> Name: </p>
+			<p id = "numero"> Number of Visits: </p>
+			<p id = "advi"> Advice: </p>
+			<p id = "enjo"> Enjoyed: </p>
+			<p id = "viu"> Pages Viewed: </p>           
+			
+		<script>
+	
+				const Greet = "You have reached the feedback form! Click OK to proceed. Remember, honesty is the best policy. Feel free to go back to the previous page if you do not wish to fill this out or if you desire to return to the website. Thank you, visitor!"
+				alert(Greet);
+			
+			function print(){
+                var name = document.getElementById("name").value;
+                var days = document.getElementById("day").value;
+                var reason = document.getElementById("reason").value;
+                var cry = document.getElementsByName("used");
+                var sleep = document.getElementsByName("sub");
+
+                var done = "";
+                for (var x = 0; x < cry.length; x++)  {
+                    if (cry[x].checked)  {
+                        done = cry[x].value;
+                    }
+                }
+
+                var naur = [];
+                for (var y = 0; y < sleep.length; y++)  {
+                    if (sleep[y].checked)  {
+                        naur.push(sleep[y].value);
+                    }
+                }
+
+                document.getElementById("ngalan").innerHTML = "Name: " + name;
+                document.getElementById("numero").innerHTML = "Number of visits: " + days;
+                document.getElementById("advi").innerHTML = "Advice: " + reason;
+                
+                if (done !== "Yes")  {
+                    document.getElementById("enjo").innerHTML = "Enjoyed: No";
+                }
+                else  {
+                    document.getElementById("enjo").innerHTML = "Enjoyed: Yes";
+                }
+
+                if (naur.length != 0)  {
+                    document.getElementById("viu").innerHTML = "Pages viewed: " + naur.join(", ");
+                }
+                else  {
+                    document.getElementById("viu").innerHTML = "Pages visited: None";
+                }
+
+                return false;
+            }
+		</script>
+		</body>
+	</html>
